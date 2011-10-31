@@ -7,3 +7,16 @@
 # @see http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Method_Calls
 # @see Programing Ruby, Chapter 6 
 #
+
+def find_quote(filename, line = nil)
+  if File.exists?(filename)
+    f = File.readlines(filename)
+    if line == nil || line >= f.length
+      return f.sample
+    else
+      return f[line].strip
+    end
+  else
+    "Could not find a quote at this time"
+  end
+end
