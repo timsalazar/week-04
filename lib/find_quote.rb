@@ -12,9 +12,9 @@ def find_quote(filename, line = nil)
   if File.exists?(filename)
     f = File.readlines(filename)
     if line == nil || line >= f.length
-      return f.sample
+      f.sample
     else
-      return f[line].strip
+      f[line].strip
     end
   else
     "Could not find a quote at this time"
